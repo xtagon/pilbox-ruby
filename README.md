@@ -62,7 +62,7 @@ unsigned_url = "http://mypilboxserver.example.org?url=http%3A%2F%2Fwww.example.c
 signed_url = Pilbox.thumb_uri(unsigned_url, client_name: "...", client_key: "...").to_s
 ```
 
-Care has been taken to make this utility as simple to use as possible. If it behaves unexpectedly for you, please report it on the issue tracker.
+Care has been taken to make this utility as simple to use as possible. If it behaves unexpectedly for you, please report it on the [issue tracker](https://github.com/xtagon/pilbox-ruby/issues).
 
 Author
 ------
