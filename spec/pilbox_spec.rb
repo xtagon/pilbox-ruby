@@ -61,5 +61,16 @@ describe Pilbox do
         expect(result.to_s).to eq("http://thumb.example.org?url=http%3A%2F%2Fwww.example.com%2Fimage.jpg&w=250&sig=5d43a9da6f014d5a8fdf0414392812e033c24d59")
       end
     end
+
+    context "given both resize and rotate operations" do
+      # `op=resize,rotate` works, but `op=resize%2Crotate` does not.
+      it "encodes the query string correctly" do
+        params = {url: "http://www.example.com/image.jpg", w: 250, op: "resize,rotate", deg: "auto"}
+
+        result = Pilbox.thumb_uri("http://thumb.example.org", params)
+        expect(result).to be_a(URI)
+        expect(result.to_s).to eq("http://thumb.example.org?url=http%3A%2F%2Fwww.example.com%2Fimage.jpg&w=250&op=resize,rotate&deg=auto")
+      end
+    end
   end
 end
