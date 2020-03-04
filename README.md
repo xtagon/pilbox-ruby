@@ -45,7 +45,7 @@ The following is a more complete example, which will return a signed URI ready t
 base_uri = ENV["PILBOX_HOST"] # e.g. https://mypilboxserver.example.com
 thumb_params = {
   url: "http://www.example.org/happypanda.png",
-  op: "resize,rotate",
+  op: "rotate,resize",
   w: 150,
   h: 150,
   deg: "auto",
